@@ -107,10 +107,15 @@ nav.scrolled{ border-color:var(--line); background:color-mix(in srgb, var(--bg) 
 .hero-canvas{position:absolute; inset:0; width:100%; height:100%; z-index:0; pointer-events:none;}
 .hero-inner{position:relative; z-index:1; display:flex; align-items:center; justify-content:space-between; gap:96px; width:100%; max-width:1180px; margin:0 auto;}
 .hero-copy{position:relative; flex:1 1 480px; max-width:560px; min-width:0;}
-.hero-photos{position:relative; flex:0 0 260px; width:260px; opacity:.95;}
-.hero-photos-static{display:flex; flex-direction:column; gap:14px;}
+.hero-photos{position:relative; flex:0 0 260px; width:260px; height:min(600px, 62vh); overflow:hidden; opacity:.95;}
+.photo-col{height:100%; overflow:hidden; border-radius:2px;}
+.photo-track{display:flex; flex-direction:column; gap:14px; width:100%; animation:scrollUp 40s linear infinite;}
+@keyframes scrollUp{from{transform:translateY(0);}to{transform:translateY(-50%);}}
 .hero-photo{width:100%; aspect-ratio:3/4; flex-shrink:0; border-radius:2px; overflow:hidden; background:var(--bg-soft); border:1px solid var(--line);}
 .hero-photo img{width:100%; height:100%; object-fit:cover; display:block; filter:grayscale(1) contrast(1.05);}
+.hero-photos::before,.hero-photos::after{content:''; position:absolute; left:0; right:0; height:64px; z-index:2; pointer-events:none;}
+.hero-photos::before{top:0; background:linear-gradient(var(--bg), transparent);}
+.hero-photos::after{bottom:0; background:linear-gradient(transparent, var(--bg));}
 .hero h1{font-size:clamp(44px,5.8vw,92px); line-height:.94; font-weight:800; letter-spacing:-0.04em;}
 .hero-badge{display:inline-flex; align-items:center; gap:9px; font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-dim); border:1px solid var(--line); padding:7px 14px; border-radius:999px; margin-bottom:24px;}
 .hero-badge .dot{width:7px; height:7px; border-radius:50%; background:#3fb950; animation:pulse 2.6s ease-in-out infinite;}
@@ -391,10 +396,17 @@ footer{border-top:1px solid var(--line); padding:36px 0; display:flex; justify-c
         <a href="#projects" class="btn btn-outline" data-en="◎ View projects">◎ Ver projetos</a>
       </div>
     </div>
-    <div class="hero-photos hero-photos-static">
-      <div class="hero-photo"><img src="images/perfil1-web.jpg" alt="Leirisson Souza"></div>
-      <div class="hero-photo"><img src="images/perfil2-web.jpg" alt="" aria-hidden="true"></div>
-      <div class="hero-photo"><img src="images/perfil3-web.jpg" alt="" aria-hidden="true"></div>
+    <div class="hero-photos">
+      <div class="photo-col">
+        <div class="photo-track">
+          <div class="hero-photo"><img src="images/perfil1-web.jpg" alt="Leirisson Souza"></div>
+          <div class="hero-photo"><img src="images/perfil2-web.jpg" alt="" aria-hidden="true"></div>
+          <div class="hero-photo"><img src="images/perfil3-web.jpg" alt="" aria-hidden="true"></div>
+          <div class="hero-photo"><img src="images/perfil1-web.jpg" alt="" aria-hidden="true"></div>
+          <div class="hero-photo"><img src="images/perfil2-web.jpg" alt="" aria-hidden="true"></div>
+          <div class="hero-photo"><img src="images/perfil3-web.jpg" alt="" aria-hidden="true"></div>
+        </div>
+      </div>
     </div>
   </div>
   <div class="scroll-cue"><div class="bar"></div>Scroll</div>
