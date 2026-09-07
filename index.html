@@ -3,7 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Leirisson Souza — Full Stack Developer</title>
+<title>Leirisson Souza — Backend Developer & IA Aplicada</title>
+<meta name="description" content="Desenvolvedor Backend com foco em IA Aplicada — LLMs, agentes, RAG e MCP. Construo APIs, automações e SaaS de ponta a ponta.">
+<meta property="og:title" content="Leirisson Souza — Backend Developer & IA Aplicada">
+<meta property="og:description" content="Desenvolvedor Backend com foco em IA Aplicada. LLMs, agentes, RAG e MCP em Node.js, TypeScript, Python e Java/Spring.">
+<meta property="og:url" content="https://www.leirissonsouza.com">
+<meta name="twitter:card" content="summary_large_image">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400..800&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=JetBrains+Mono:wght@400;500&display=swap');
 
@@ -102,17 +107,10 @@ nav.scrolled{ border-color:var(--line); background:color-mix(in srgb, var(--bg) 
 .hero-canvas{position:absolute; inset:0; width:100%; height:100%; z-index:0; pointer-events:none;}
 .hero-inner{position:relative; z-index:1; display:flex; align-items:center; justify-content:space-between; gap:96px; width:100%; max-width:1180px; margin:0 auto;}
 .hero-copy{position:relative; flex:1 1 480px; max-width:560px; min-width:0;}
-.hero-photos{position:relative; flex:0 0 320px; width:320px; height:min(600px, 62vh); display:flex; gap:14px; opacity:.95;}
-.photo-col{flex:1; height:100%; overflow:hidden; border-radius:2px;}
-.photo-track{display:flex; flex-direction:column; gap:14px; width:100%;}
-.photo-col.col-up .photo-track{animation:scrollUp 36s linear infinite;}
-.photo-col.col-down .photo-track{animation:scrollUp 44s linear infinite reverse;}
-@keyframes scrollUp{from{transform:translateY(0);}to{transform:translateY(-50%);}}
+.hero-photos{position:relative; flex:0 0 260px; width:260px; opacity:.95;}
+.hero-photos-static{display:flex; flex-direction:column; gap:14px;}
 .hero-photo{width:100%; aspect-ratio:3/4; flex-shrink:0; border-radius:2px; overflow:hidden; background:var(--bg-soft); border:1px solid var(--line);}
 .hero-photo img{width:100%; height:100%; object-fit:cover; display:block; filter:grayscale(1) contrast(1.05);}
-.hero-photos::before,.hero-photos::after{content:''; position:absolute; left:0; right:0; height:64px; z-index:2; pointer-events:none;}
-.hero-photos::before{top:0; background:linear-gradient(var(--bg), transparent);}
-.hero-photos::after{bottom:0; background:linear-gradient(transparent, var(--bg));}
 .hero h1{font-size:clamp(44px,5.8vw,92px); line-height:.94; font-weight:800; letter-spacing:-0.04em;}
 .hero-badge{display:inline-flex; align-items:center; gap:9px; font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-dim); border:1px solid var(--line); padding:7px 14px; border-radius:999px; margin-bottom:24px;}
 .hero-badge .dot{width:7px; height:7px; border-radius:50%; background:#3fb950; animation:pulse 2.6s ease-in-out infinite;}
@@ -223,6 +221,9 @@ nav.scrolled{ border-color:var(--line); background:color-mix(in srgb, var(--bg) 
 .project-card-name{font-family:'Syne',sans-serif; font-weight:800; font-size:clamp(28px,4vw,52px); color:rgba(255,255,255,.62); text-transform:uppercase; letter-spacing:-0.02em; line-height:1.02;}
 .project-card-desc{font-size:14px; color:rgba(255,255,255,.6); font-weight:300; margin-top:10px; max-width:80%; text-transform:none; line-height:1.55;}
 .project-card-tag{display:block; font-family:'JetBrains Mono',monospace; font-size:11.5px; color:rgba(255,255,255,.45); text-transform:uppercase; letter-spacing:.05em; margin-top:12px;}
+.project-card-img--placeholder{background:#141414; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px; padding:20px;}
+.project-card-placeholder-mark{font-family:'Syne',sans-serif; font-weight:800; font-size:clamp(40px,7vw,100px); text-transform:uppercase; letter-spacing:-0.02em; color:rgba(255,255,255,.14); text-align:center; line-height:.95; user-select:none;}
+.project-card-soon{font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:rgba(255,255,255,.3);}
 .project-end{
   position:relative; flex:0 0 auto; width:clamp(320px, 32vw, 460px); aspect-ratio:16/10; scroll-snap-align:start;
   display:flex; flex-direction:column; align-items:flex-start; justify-content:center; overflow:hidden;
@@ -259,6 +260,7 @@ nav.scrolled{ border-color:var(--line); background:color-mix(in srgb, var(--bg) 
 .modal-close:hover{border-color:#fff;}
 .modal-media{position:relative; width:100%; aspect-ratio:16/9; background:var(--bg); border-bottom:1px solid var(--line); overflow:hidden;}
 .modal-media img{width:100%; height:100%; object-fit:cover; display:block;}
+.modal-media--placeholder{background:#141414;}
 .modal-media-scrim{position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,.85) 0%, rgba(0,0,0,.25) 45%, rgba(0,0,0,0) 68%);}
 .modal-media-caption{position:absolute; left:28px; right:28px; bottom:20px;}
 .modal-title{font-family:'Syne',sans-serif; font-weight:800; font-size:clamp(28px,4vw,42px); color:#fff; text-transform:uppercase; letter-spacing:-0.02em; line-height:1;}
@@ -271,6 +273,7 @@ nav.scrolled{ border-color:var(--line); background:color-mix(in srgb, var(--bg) 
 .modal-points li::before{content:''; position:absolute; left:0; top:8px; width:6px; height:1px; background:var(--ink);}
 .modal-tags{display:flex; flex-wrap:wrap; gap:8px;}
 .modal-tags span{font-family:'JetBrains Mono',monospace; font-size:11.5px; color:var(--ink-dim); border:1px solid var(--line); padding:6px 12px; border-radius:2px;}
+.modal-repo{margin-top:26px; display:inline-block; font-family:'JetBrains Mono',monospace; font-size:12.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--ink); border-bottom:1px solid var(--ink); padding-bottom:3px;}
 @media (max-width:860px){
   .projects-info{width:78vw; margin-right:max(32px, 8vw);}
   .project-card{width:82vw;}
@@ -382,33 +385,16 @@ footer{border-top:1px solid var(--line); padding:36px 0; display:flex; justify-c
     <div class="hero-copy">
       <div class="hero-badge reveal-blur"><span class="dot"></span><span data-en="Available for new projects">Disponível para novos projetos</span></div>
       <h1>LEIRISSON<br>SOUZA</h1>
-      <p data-en-html="I&rsquo;m someone who loves learning new things and putting them into practice. I build &lt;em&gt;web&lt;/em&gt; systems rooted in &lt;em&gt;infrastructure&lt;/em&gt;. I like working with tools that are simple, practical, and &lt;b&gt;sustainable&lt;/b&gt;.">Sou alguém que gosta de aprender coisas novas e colocá-las em prática. Desenvolvo sistemas <em>web</em> com raiz em <em>infraestrutura</em>. Gosto de trabalhar com ferramentas simples, práticas e <b>sustentáveis</b>.</p>
+      <p data-en-html="I build APIs, automations, and AI-powered systems &mdash; from technical spec to deploy. I have roots in infrastructure, which makes me design systems thinking about how they run in &lt;b&gt;production&lt;/b&gt;, not just how they work on my machine.">Construo APIs, automações e sistemas com IA — do spec técnico ao deploy. Tenho raiz em infraestrutura, o que me faz projetar sistemas pensando em como rodam em <b>produção</b>, não apenas em como funcionam no meu computador.</p>
       <div class="hero-cta">
         <a href="#contact" class="btn btn-solid" data-en="Get in touch →">Falar comigo →</a>
         <a href="#projects" class="btn btn-outline" data-en="◎ View projects">◎ Ver projetos</a>
       </div>
     </div>
-    <div class="hero-photos">
-      <div class="photo-col col-up">
-        <div class="photo-track">
-          <div class="hero-photo"><img src="images/perfil1-web.jpg" alt="Leirisson Souza"></div>
-          <div class="hero-photo"><img src="images/perfil2-web.jpg" alt="Leirisson Souza"></div>
-          <div class="hero-photo"><img src="images/perfil3-web.jpg" alt="Leirisson Souza"></div>
-          <div class="hero-photo"><img src="images/perfil1-web.jpg" alt="" aria-hidden="true"></div>
-          <div class="hero-photo"><img src="images/perfil2-web.jpg" alt="" aria-hidden="true"></div>
-          <div class="hero-photo"><img src="images/perfil3-web.jpg" alt="" aria-hidden="true"></div>
-        </div>
-      </div>
-      <div class="photo-col col-down">
-        <div class="photo-track">
-          <div class="hero-photo"><img src="images/perfil2-web.jpg" alt="" aria-hidden="true"></div>
-          <div class="hero-photo"><img src="images/perfil3-web.jpg" alt="" aria-hidden="true"></div>
-          <div class="hero-photo"><img src="images/perfil1-web.jpg" alt="" aria-hidden="true"></div>
-          <div class="hero-photo"><img src="images/perfil2-web.jpg" alt="" aria-hidden="true"></div>
-          <div class="hero-photo"><img src="images/perfil3-web.jpg" alt="" aria-hidden="true"></div>
-          <div class="hero-photo"><img src="images/perfil1-web.jpg" alt="" aria-hidden="true"></div>
-        </div>
-      </div>
+    <div class="hero-photos hero-photos-static">
+      <div class="hero-photo"><img src="images/perfil1-web.jpg" alt="Leirisson Souza"></div>
+      <div class="hero-photo"><img src="images/perfil2-web.jpg" alt="" aria-hidden="true"></div>
+      <div class="hero-photo"><img src="images/perfil3-web.jpg" alt="" aria-hidden="true"></div>
     </div>
   </div>
   <div class="scroll-cue"><div class="bar"></div>Scroll</div>
@@ -421,13 +407,13 @@ footer{border-top:1px solid var(--line); padding:36px 0; display:flex; justify-c
 <section class="section" id="about">
   <div class="wrap about-grid">
     <div class="reveal">
-      <div class="about-name">Leirisson Souza<b data-en="Full Stack Dev · IT Consultant">Full Stack Dev · Consultor de TI</b></div>
+      <div class="about-name">Leirisson Souza<b data-en="Backend Developer &amp; Applied AI · IT Consultant">Desenvolvedor Backend & IA Aplicada · Consultor de TI</b></div>
     </div>
     <div class="reveal">
       <div class="section-tag">[001]</div>
-      <h3 data-en-html="I&rsquo;m a &lt;em&gt;Full Stack Developer&lt;/em&gt; rooted in infrastructure, focused on building &lt;b&gt;clean and sustainable&lt;/b&gt; systems.">Sou um <em>Full Stack Developer</em> com raiz em infraestrutura, focado em construir sistemas <b>limpos e sustentáveis</b>.</h3>
-      <p data-en="I work as a junior full stack developer and IT consultant, with a background in support and infrastructure (ILHA Service / Federal Court‑SJAM, Grupo Bringel) that now shapes how I design systems that need to actually run in production.">Atuo como desenvolvedor full stack júnior e consultor de TI, com histórico em suporte e infraestrutura (ILHA Service / Justiça Federal‑SJAM, Grupo Bringel) que hoje orienta como projeto sistemas que precisam rodar de verdade em produção.</p>
-      <p data-en="Today I build my own products end-to-end — billing SaaS, AI-powered recruitment platforms, prospecting automations — and I&rsquo;m pursuing a postgraduate degree in Software Engineering focused on Applied AI. I value direct transparency and continuous learning over any trendy framework.">Hoje desenvolvo produtos próprios de ponta a ponta — SaaS de cobrança, plataformas de recrutamento com IA, automações de prospecção — e curso pós-graduação em Engenharia de Software com foco em IA Aplicada. Valho transparência direta e aprendizado contínuo mais do que qualquer framework da moda.</p>
+      <h3 data-en-html="I&rsquo;m a backend developer focused on applied AI &mdash; LLMs, agents, and systems that need to &lt;b&gt;actually run&lt;/b&gt;.">Sou desenvolvedor backend com foco em IA aplicada — LLMs, agentes e sistemas que precisam <b>rodar de verdade</b>.</h3>
+      <p data-en="I work as a junior backend developer and IT consultant. My path started in support and infrastructure (ILHA Services at the Federal Court‑SJAM, Grupo Bringel, ParaísoNet), moved through full stack development, and is now focused on building systems that integrate LLMs in a practical, auditable way.">Atuo como desenvolvedor backend júnior e consultor de TI. Minha trajetória começou em suporte e infraestrutura (ILHA Services na Justiça Federal‑SJAM, Grupo Bringel, ParaísoNet), passou por desenvolvimento full stack e hoje está focada em construir sistemas que integram LLMs de forma prática e auditável.</p>
+      <p data-en="I build my own products end-to-end — billing SaaS, enterprise license management, an AI-powered recruitment platform, dictation training with LLM feedback. I&rsquo;m finishing a postgraduate degree in Software Engineering focused on Applied AI (UNIPDS), and I value direct transparency, testable code, and continuous learning more than any trendy framework.">Desenvolvo produtos próprios de ponta a ponta — SaaS de cobrança, gestão de licenças empresariais, plataforma de recrutamento com IA, treino de dicção com feedback de LLM. Estou concluindo pós-graduação em Engenharia de Software com foco em IA Aplicada (UNIPDS) e valorizo transparência direta, código testável e aprendizado contínuo mais que qualquer framework da moda.</p>
       <a href="#contact" class="read-more" data-en="Full version →">Versão completa →</a>
     </div>
   </div>
@@ -443,25 +429,28 @@ footer{border-top:1px solid var(--line); padding:36px 0; display:flex; justify-c
     <h2 class="section-title reveal">Stack</h2>
 
     <div class="stack-cat reveal">
-      <div class="stack-cat-head"><span class="stack-num mono">01</span><h4>Frontend</h4></div>
+      <div class="stack-cat-head"><span class="stack-num mono">01</span><h4>Backend</h4></div>
       <div class="pills">
-        <div class="pill"><img class="pill-icon" src="https://cdn.simpleicons.org/react/a1a1a1" width="16" height="16" alt="">React</div>
-        <div class="pill"><img class="pill-icon" src="https://cdn.simpleicons.org/nextdotjs/a1a1a1" width="16" height="16" alt="">Next.js</div>
-        <div class="pill"><img class="pill-icon" src="https://cdn.simpleicons.org/typescript/a1a1a1" width="16" height="16" alt="">TypeScript</div>
-        <div class="pill"><img class="pill-icon" src="https://cdn.simpleicons.org/javascript/a1a1a1" width="16" height="16" alt="">JavaScript</div>
-        <div class="pill"><img class="pill-icon" src="https://cdn.simpleicons.org/html5/a1a1a1" width="16" height="16" alt="">HTML5</div>
-        <div class="pill"><img class="pill-icon" src="https://cdn.simpleicons.org/css3/a1a1a1" width="16" height="16" alt="">CSS3</div>
+        <div class="pill"><img class="pill-icon" src="https://cdn.simpleicons.org/nodedotjs/a1a1a1" width="16" height="16" alt="">Node.js</div>
+        <div class="pill"><img class="pill-icon" src="https://cdn.simpleicons.org/fastify/a1a1a1" width="16" height="16" alt="">Fastify</div>
+        <div class="pill"><img class="pill-icon" src="https://cdn.simpleicons.org/openjdk/a1a1a1" width="16" height="16" alt="">Java</div>
+        <div class="pill"><img class="pill-icon" src="https://cdn.simpleicons.org/springboot/a1a1a1" width="16" height="16" alt="">Spring Boot</div>
+        <div class="pill"><img class="pill-icon" src="https://cdn.simpleicons.org/python/a1a1a1" width="16" height="16" alt="">Python</div>
       </div>
     </div>
 
     <div class="stack-cat reveal">
-      <div class="stack-cat-head"><span class="stack-num mono">02</span><h4>Backend</h4></div>
+      <div class="stack-cat-head"><span class="stack-num mono">02</span><h4 data-en="AI &amp; Automation">IA &amp; Automação</h4></div>
       <div class="pills">
-        <div class="pill"><img class="pill-icon" src="https://cdn.simpleicons.org/openjdk/a1a1a1" width="16" height="16" alt="">Java</div>
-        <div class="pill"><img class="pill-icon" src="https://cdn.simpleicons.org/springboot/a1a1a1" width="16" height="16" alt="">Spring Boot</div>
-        <div class="pill"><img class="pill-icon" src="https://cdn.simpleicons.org/nodedotjs/a1a1a1" width="16" height="16" alt="">Node.js</div>
-        <div class="pill"><img class="pill-icon" src="https://cdn.simpleicons.org/fastify/a1a1a1" width="16" height="16" alt="">Fastify</div>
-        <div class="pill"><img class="pill-icon" src="https://cdn.simpleicons.org/python/a1a1a1" width="16" height="16" alt="">Python</div>
+        <div class="pill"><svg class="pill-icon" aria-hidden="true" viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M12 2l1.8 6.2L20 10l-6.2 1.8L12 18l-1.8-6.2L4 10l6.2-1.8z"/></svg>LLMs</div>
+        <div class="pill"><svg class="pill-icon" aria-hidden="true" viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M12 2l1.8 6.2L20 10l-6.2 1.8L12 18l-1.8-6.2L4 10l6.2-1.8z"/></svg><span data-en="AI Agents">Agentes de IA</span></div>
+        <div class="pill"><svg class="pill-icon" aria-hidden="true" viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M12 2l1.8 6.2L20 10l-6.2 1.8L12 18l-1.8-6.2L4 10l6.2-1.8z"/></svg>LangChain</div>
+        <div class="pill"><svg class="pill-icon" aria-hidden="true" viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M12 2l1.8 6.2L20 10l-6.2 1.8L12 18l-1.8-6.2L4 10l6.2-1.8z"/></svg>LangGraph</div>
+        <div class="pill"><svg class="pill-icon" aria-hidden="true" viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M12 2l1.8 6.2L20 10l-6.2 1.8L12 18l-1.8-6.2L4 10l6.2-1.8z"/></svg>RAG</div>
+        <div class="pill"><svg class="pill-icon" aria-hidden="true" viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M12 2l1.8 6.2L20 10l-6.2 1.8L12 18l-1.8-6.2L4 10l6.2-1.8z"/></svg>MCP</div>
+        <div class="pill"><svg class="pill-icon" aria-hidden="true" viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M12 2l1.8 6.2L20 10l-6.2 1.8L12 18l-1.8-6.2L4 10l6.2-1.8z"/></svg>Whisper</div>
+        <div class="pill"><img class="pill-icon" src="https://cdn.simpleicons.org/n8n/a1a1a1" width="16" height="16" alt="">n8n</div>
+        <div class="pill"><img class="pill-icon" src="https://cdn.simpleicons.org/whatsapp/a1a1a1" width="16" height="16" alt="">Evolution API</div>
       </div>
     </div>
 
@@ -477,17 +466,16 @@ footer{border-top:1px solid var(--line); padding:36px 0; display:flex; justify-c
     </div>
 
     <div class="stack-cat reveal">
-      <div class="stack-cat-head"><span class="stack-num mono">04</span><h4 data-en="AI &amp; Automation">IA &amp; Automação</h4></div>
+      <div class="stack-cat-head"><span class="stack-num mono">04</span><h4>Frontend</h4></div>
       <div class="pills">
-        <div class="pill"><svg class="pill-icon" aria-hidden="true" viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M12 2l1.8 6.2L20 10l-6.2 1.8L12 18l-1.8-6.2L4 10l6.2-1.8z"/></svg><span data-en="AI Agents">Agentes de IA</span></div>
-        <div class="pill"><svg class="pill-icon" aria-hidden="true" viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M12 2l1.8 6.2L20 10l-6.2 1.8L12 18l-1.8-6.2L4 10l6.2-1.8z"/></svg>LLMs</div>
-        <div class="pill"><img class="pill-icon" src="https://cdn.simpleicons.org/n8n/a1a1a1" width="16" height="16" alt="">n8n</div>
-        <div class="pill"><img class="pill-icon" src="https://cdn.simpleicons.org/whatsapp/a1a1a1" width="16" height="16" alt="">Evolution API</div>
+        <div class="pill"><img class="pill-icon" src="https://cdn.simpleicons.org/nextdotjs/a1a1a1" width="16" height="16" alt="">Next.js</div>
+        <div class="pill"><img class="pill-icon" src="https://cdn.simpleicons.org/react/a1a1a1" width="16" height="16" alt="">React</div>
+        <div class="pill"><img class="pill-icon" src="https://cdn.simpleicons.org/typescript/a1a1a1" width="16" height="16" alt="">TypeScript</div>
       </div>
     </div>
 
     <div class="stack-cat reveal">
-      <div class="stack-cat-head"><span class="stack-num mono">05</span><h4 data-en="Infra &amp; Tools">Infra &amp; Ferramentas</h4></div>
+      <div class="stack-cat-head"><span class="stack-num mono">05</span><h4 data-en="Infra &amp; DevOps">Infra &amp; DevOps</h4></div>
       <div class="pills">
         <div class="pill"><img class="pill-icon" src="https://cdn.simpleicons.org/docker/a1a1a1" width="16" height="16" alt="">Docker</div>
         <div class="pill"><img class="pill-icon" src="https://cdn.simpleicons.org/git/a1a1a1" width="16" height="16" alt="">Git</div>
@@ -514,10 +502,65 @@ footer{border-top:1px solid var(--line); padding:36px 0; display:flex; justify-c
         <span data-en="Scroll to explore">Role para explorar</span>
       </div>
     </div>
-    <button type="button" class="project-card reveal" data-project="barberxp" aria-haspopup="dialog">
-        <img class="project-card-img" src="projetos/barberxp-web.jpg" alt="" loading="lazy">
+    <button type="button" class="project-card project-card--placeholder reveal" data-project="cobracerta" aria-haspopup="dialog">
+        <div class="project-card-img project-card-img--placeholder"><span class="project-card-placeholder-mark" aria-hidden="true">CC</span><span class="project-card-soon" data-en="Screenshot coming soon">Screenshot em breve</span></div>
         <div class="project-card-scrim"></div>
         <div class="project-card-index mono">01</div>
+        <div class="project-card-more" aria-hidden="true" data-en="View details →">Ver detalhes →</div>
+        <div class="project-card-body">
+          <div class="project-card-name">CobraCerta</div>
+          <div class="project-card-desc" data-en="Multi-tenant recurring billing SaaS — invoicing, payment gateways, e-invoices, and WhatsApp reminders.">SaaS multi-tenant de cobrança recorrente — faturamento, gateways de pagamento, NFS-e e lembretes por WhatsApp.</div>
+          <div class="project-card-tag">Node.js · Fastify · Prisma · PostgreSQL · BullMQ</div>
+        </div>
+      </button>
+      <button type="button" class="project-card project-card--placeholder reveal" data-project="convoca" aria-haspopup="dialog">
+        <div class="project-card-img project-card-img--placeholder"><span class="project-card-placeholder-mark" aria-hidden="true">CV</span><span class="project-card-soon" data-en="Screenshot coming soon">Screenshot em breve</span></div>
+        <div class="project-card-scrim"></div>
+        <div class="project-card-index mono">02</div>
+        <div class="project-card-more" aria-hidden="true" data-en="View details →">Ver detalhes →</div>
+        <div class="project-card-body">
+          <div class="project-card-name">Convoca</div>
+          <div class="project-card-desc" data-en="Recruitment platform that flips the job search — an AI agent contacts candidates on WhatsApp and screens them.">Plataforma de recrutamento que inverte a busca de emprego — um agente de IA contata candidatos no WhatsApp e faz a triagem.</div>
+          <div class="project-card-tag">Node.js · Fastify · LangGraph · Evolution API</div>
+        </div>
+      </button>
+      <button type="button" class="project-card reveal" data-project="sgi" aria-haspopup="dialog">
+        <img class="project-card-img" src="projetos/sgi-web.jpg" alt="" loading="lazy">
+        <div class="project-card-scrim"></div>
+        <div class="project-card-index mono">03</div>
+        <div class="project-card-more" aria-hidden="true" data-en="View details →">Ver detalhes →</div>
+        <div class="project-card-body">
+          <div class="project-card-name">SGI</div>
+          <div class="project-card-desc" data-en="Multi-tenant SaaS platform to manage licenses, permits, and documents with expiration alerts.">Plataforma SaaS multi-tenant para controlar licenças, alvarás e documentos com alertas de vencimento.</div>
+          <div class="project-card-tag">Node.js · Fastify · Prisma · PostgreSQL</div>
+        </div>
+      </button>
+      <button type="button" class="project-card project-card--placeholder reveal" data-project="kabru" aria-haspopup="dialog">
+        <div class="project-card-img project-card-img--placeholder"><span class="project-card-placeholder-mark" aria-hidden="true">KB</span><span class="project-card-soon" data-en="Screenshot coming soon">Screenshot em breve</span></div>
+        <div class="project-card-scrim"></div>
+        <div class="project-card-index mono">04</div>
+        <div class="project-card-more" aria-hidden="true" data-en="View details →">Ver detalhes →</div>
+        <div class="project-card-body">
+          <div class="project-card-name">Kabru</div>
+          <div class="project-card-desc" data-en="Internal order-management system that uses AI to extract data straight from PDFs, eliminating manual entry.">Sistema interno de gestão de pedidos que usa IA para extrair dados de PDFs, eliminando a digitação manual.</div>
+          <div class="project-card-tag">Next.js · Prisma · PostgreSQL · OpenAI</div>
+        </div>
+      </button>
+      <button type="button" class="project-card project-card--placeholder reveal" data-project="grafy" aria-haspopup="dialog">
+        <div class="project-card-img project-card-img--placeholder"><span class="project-card-placeholder-mark" aria-hidden="true">GF</span><span class="project-card-soon" data-en="Screenshot coming soon">Screenshot em breve</span></div>
+        <div class="project-card-scrim"></div>
+        <div class="project-card-index mono">05</div>
+        <div class="project-card-more" aria-hidden="true" data-en="View details →">Ver detalhes →</div>
+        <div class="project-card-body">
+          <div class="project-card-name">Gráfy</div>
+          <div class="project-card-desc" data-en="Multi-tenant SaaS for print shops that automates end-to-end quoting and briefings with an AI agent.">SaaS multi-tenant para gráficas que automatiza orçamentos e briefings de ponta a ponta com um agente de IA.</div>
+          <div class="project-card-tag">Node.js · Fastify · LangGraph · Anthropic API</div>
+        </div>
+      </button>
+      <button type="button" class="project-card reveal" data-project="barberxp" aria-haspopup="dialog">
+        <img class="project-card-img" src="projetos/barberxp-web.jpg" alt="" loading="lazy">
+        <div class="project-card-scrim"></div>
+        <div class="project-card-index mono">06</div>
         <div class="project-card-more" aria-hidden="true" data-en="View details →">Ver detalhes →</div>
         <div class="project-card-body">
           <div class="project-card-name">BarberXP</div>
@@ -525,21 +568,10 @@ footer{border-top:1px solid var(--line); padding:36px 0; display:flex; justify-c
           <div class="project-card-tag">Fastify · Next.js 16 · Prisma · PostgreSQL</div>
         </div>
       </button>
-      <button type="button" class="project-card reveal" data-project="sgi" aria-haspopup="dialog">
-        <img class="project-card-img" src="projetos/sgi-web.jpg" alt="" loading="lazy">
-        <div class="project-card-scrim"></div>
-        <div class="project-card-index mono">02</div>
-        <div class="project-card-more" aria-hidden="true" data-en="View details →">Ver detalhes →</div>
-        <div class="project-card-body">
-          <div class="project-card-name">SGI</div>
-          <div class="project-card-desc" data-en="Multi-tenant SaaS platform to manage licenses, permits, and documents with expiration alerts.">Plataforma SaaS multi-tenant para controlar licenças, alvarás e documentos com alertas de vencimento.</div>
-          <div class="project-card-tag">Node.js · Fastify · Prisma · Next.js 16</div>
-        </div>
-      </button>
       <button type="button" class="project-card reveal" data-project="voxmaster" aria-haspopup="dialog">
         <img class="project-card-img" src="projetos/voxmaster-web.jpg" alt="" loading="lazy">
         <div class="project-card-scrim"></div>
-        <div class="project-card-index mono">03</div>
+        <div class="project-card-index mono">07</div>
         <div class="project-card-more" aria-hidden="true" data-en="View details →">Ver detalhes →</div>
         <div class="project-card-body">
           <div class="project-card-name">VoxMaster</div>
@@ -575,6 +607,7 @@ footer{border-top:1px solid var(--line); padding:36px 0; display:flex; justify-c
       <ul class="modal-points" id="modal-points"></ul>
       <span class="modal-label" data-en="Technologies">Tecnologias</span>
       <div class="modal-tags" id="modal-tags"></div>
+      <a class="modal-repo" id="modal-repo" href="#" target="_blank" rel="noopener" data-en="View repository →" hidden>Ver repositório →</a>
     </div>
   </div>
 </div>
@@ -594,28 +627,28 @@ footer{border-top:1px solid var(--line); padding:36px 0; display:flex; justify-c
         <div class="tl-dot"></div>
         <div class="tl-card reveal">
           <div class="tl-index mono">01</div>
-          <div class="tl-year reveal-scale">Coari</div>
-          <h4 data-en="Ifam — Coari Campus">Ifam — Campus Coari</h4>
-          <p data-en="Technical education integrated with high school, where I had my first structured contact with logic and study discipline — a foundation I still carry today.">Formação técnica integrada ao ensino médio, onde tive o primeiro contato estruturado com lógica e disciplina de estudo — base que carrego até hoje.</p>
+          <div class="tl-year reveal-scale">2016–2020</div>
+          <h4 data-en="IFAM — Coari Campus">IFAM — Campus Coari</h4>
+          <p data-en="Technical high school integrated with a degree in Information Technology. My first structured contact with logic, networking, and study discipline — a technical foundation I still carry today.">Ensino Médio Integrado ao Técnico em Informática. Primeiro contato estruturado com lógica, redes e disciplina de estudo — base técnica que carrego até hoje.</p>
         </div>
       </div>
       <div class="tl-item">
         <div class="tl-dot"></div>
         <div class="tl-card reveal">
           <div class="tl-index mono">02</div>
-          <div class="tl-year reveal-scale" data-en="5 years">5 anos</div>
+          <div class="tl-year reveal-scale">2019–2024</div>
           <h4 data-en="IT Support &amp; Infrastructure">Suporte &amp; Infraestrutura de TI</h4>
-          <p data-en="Worked in technical support, networking, and infrastructure — ILHA Service (Federal Court‑SJAM), Grupo Bringel, and freelance consulting, including Microsoft 365/Entra ID, GLPI, and server monitoring.">Atuação em suporte técnico, redes e infraestrutura — ILHA Service (Justiça Federal‑SJAM), Grupo Bringel e consultoria freelance, incluindo Microsoft 365/Entra ID, GLPI e monitoramento de servidores.</p>
-          <div class="tl-tags"><span>Windows Server</span><span>M365 / Entra ID</span><span>GLPI</span></div>
+          <p data-en="Five years in technical support, networking, and infrastructure — UNOPAR, ParaísoNet, Grupo Bringel. I learned how systems actually break in practice: latency, availability, permissions, real-world operations. That experience now shapes how I design code for production.">Cinco anos em suporte técnico, redes e infraestrutura — UNOPAR, ParaísoNet, Grupo Bringel. Aprendi como sistemas quebram na prática: latência, disponibilidade, permissões, o operacional real. Essa vivência hoje orienta como projeto código para produção.</p>
+          <div class="tl-tags"><span>Windows Server</span><span>Active Directory</span><span>GLPI</span><span data-en="Networking">Redes</span></div>
         </div>
       </div>
       <div class="tl-item">
         <div class="tl-dot"></div>
         <div class="tl-card reveal">
           <div class="tl-index mono">03</div>
-          <div class="tl-year reveal-scale">2024</div>
-          <h4 data-en="Associate Degree in Systems Analysis &amp; Development">Tecnólogo em ADS</h4>
-          <p data-en="Studied at Wyden, marking the formal transition from infrastructure to software development.">Formação pela Wyden, marcando a transição formal de infraestrutura para desenvolvimento de software.</p>
+          <div class="tl-year reveal-scale">2021–2024</div>
+          <h4 data-en="IT Degree — Faculdade Wyden">Tecnólogo em TI — Faculdade Wyden</h4>
+          <p data-en="Formal transition from infrastructure to software development.">Transição formal de infraestrutura para desenvolvimento de software.</p>
           <div class="tl-tags"><span>Java</span><span>SQL</span><span data-en="Software Engineering">Engenharia de Software</span></div>
         </div>
       </div>
@@ -623,19 +656,29 @@ footer{border-top:1px solid var(--line); padding:36px 0; display:flex; justify-c
         <div class="tl-dot"></div>
         <div class="tl-card reveal">
           <div class="tl-index mono">04</div>
-          <div class="tl-year reveal-scale">2026</div>
-          <h4 data-en="Full stack &amp; applied AI">Full stack &amp; IA aplicada</h4>
-          <p data-en="Building my own products end-to-end and deep-diving into AI agents, RAG, and fine-tuning — while continuing to work as a freelance IT consultant.">Construção de produtos próprios de ponta a ponta e estudo aprofundado de agentes de IA, RAG e fine-tuning — enquanto sigo atuando como consultor de TI freelance.</p>
-          <div class="tl-tags"><span>Next.js</span><span>Spring Boot</span><span data-en="AI Agents">Agentes de IA</span><span>n8n</span></div>
+          <div class="tl-year reveal-scale">2024–2026</div>
+          <h4 data-en="Developer / Automation Analyst — ILHA Services">Desenvolvedor / Analista de Automação — ILHA Services</h4>
+          <p data-en="First experience with AI in production: intelligent WhatsApp support via n8n + LLM integrated with GLPI, and a case-tracking assistant built on the DataJud API with AI-generated summaries.">Primeira experiência com IA em produção: atendimento inteligente via WhatsApp + n8n + LLM integrado ao GLPI, e assistente processual sobre a API DataJud com resumos gerados por IA.</p>
+          <div class="tl-tags"><span>Node.js</span><span>Python</span><span>n8n</span><span>LLMs</span><span>Evolution API</span></div>
         </div>
       </div>
       <div class="tl-item">
         <div class="tl-dot"></div>
         <div class="tl-card reveal">
           <div class="tl-index mono">05</div>
+          <div class="tl-year reveal-scale">2025–2026</div>
+          <h4 data-en="Postgraduate — Applied AI · UNIPDS">Pós-graduação — IA Aplicada · UNIPDS</h4>
+          <p data-en="Software Engineering focused on Applied AI. Deepening the fundamentals to build systems that incorporate AI responsibly, testably, and auditably.">Engenharia de Software com foco em IA Aplicada. Aprofundando fundamentos para construir sistemas que incorporam IA de forma responsável, testável e auditável.</p>
+          <div class="tl-tags"><span data-en="Agents">Agentes</span><span>RAG</span><span>MCP</span><span>LangGraph</span></div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-card reveal">
+          <div class="tl-index mono">06</div>
           <div class="tl-year reveal-scale" data-en="Now">Agora</div>
-          <h4 data-en="Postgraduate — Applied AI">Pós-graduação — IA Aplicada</h4>
-          <p data-en="UNIPDS, Software Engineering focused on Applied AI. Deepening the fundamentals for systems that incorporate AI responsibly and sustainably.">UNIPDS, Engenharia de Software com foco em IA Aplicada. Aprofundando fundamentos para sistemas que incorporam IA de forma responsável e sustentável.</p>
+          <h4 data-en="Building my own products &amp; freelance consulting">Desenvolvedor de produtos próprios &amp; consultor freelance</h4>
+          <p data-en="Building end-to-end SaaS products and providing automation and AI consulting for small businesses. Studying fine-tuning (QLoRA) and the Model Context Protocol (MCP).">Construção de SaaS de ponta a ponta e prestação de consultoria em automação e IA para pequenos negócios. Estudando fine-tuning (QLoRA) e Model Context Protocol (MCP).</p>
         </div>
       </div>
     </div>
@@ -650,7 +693,8 @@ footer{border-top:1px solid var(--line); padding:36px 0; display:flex; justify-c
   <div class="wrap contact-inner">
     <div class="section-tag reveal">[005]</div>
     <h2 class="contact-title reveal" data-en="Contact">Contato</h2>
-    <p class="contact-sub reveal" data-en="Open to bringing a new project to life or taking an existing system further.">Aberto para dar vida a um projeto novo ou levar um sistema existente adiante.</p>
+    <p class="contact-sub reveal" data-en="Open to new projects, backend/AI roles, or automation consulting.">Aberto para novos projetos, vagas backend/IA ou consultoria em automação.</p>
+    <p class="contact-sub reveal" data-en="I reply within 24h. WhatsApp is usually faster.">Respondo em até 24h. WhatsApp costuma ser mais rápido.</p>
 
     <div class="contact-rows reveal-group">
       <div class="contact-row reveal">
@@ -666,6 +710,10 @@ footer{border-top:1px solid var(--line); padding:36px 0; display:flex; justify-c
         <a href="https://www.linkedin.com/in/leirisson-souza" target="_blank" class="contact-value">linkedin.com/in/leirisson-souza</a>
       </div>
       <div class="contact-row reveal">
+        <span class="contact-label mono">GitHub</span>
+        <a href="https://github.com/leirisson" target="_blank" class="contact-value">github.com/leirisson</a>
+      </div>
+      <div class="contact-row reveal">
         <span class="contact-label mono" data-en="Portfolio">Portfólio</span>
         <a href="https://leirissonsouza.com" target="_blank" class="contact-value">leirissonsouza.com</a>
       </div>
@@ -676,7 +724,7 @@ footer{border-top:1px solid var(--line); padding:36px 0; display:flex; justify-c
       <div class="footer-links">
         <a href="https://leirissonsouza.com" target="_blank" data-en="Portfolio">Portfólio</a>
         <a href="https://www.linkedin.com/in/leirisson-souza" target="_blank">LinkedIn</a>
-        <a href="#" target="_blank">GitHub</a>
+        <a href="https://github.com/leirisson" target="_blank">GitHub</a>
       </div>
     </footer>
   </div>
@@ -1014,8 +1062,67 @@ tlItems.forEach(el=> tlObserver.observe(el));
 /* PROJECT DETAIL MODAL */
 (function(){
   const projects = {
+    cobracerta: {
+      image: null,
+      repo: 'https://github.com/leirisson/sistema-cobranca',
+      tags: ['Node.js','TypeScript','Fastify','Prisma','PostgreSQL','BullMQ','Redis','Next.js'],
+      pt: {
+        name: 'CobraCerta',
+        subtitle: 'Cobrança Recorrente & Faturamento',
+        intro: 'SaaS multi-tenant de cobrança recorrente e faturamento que automatiza todo o ciclo financeiro: emissão de cobranças, integração com gateways de pagamento, emissão de NFS-e e disparo de lembretes por WhatsApp.',
+        points: [
+          'Integração com os gateways de pagamento Asaas e Santander para emissão e conciliação de cobranças.',
+          'Emissão automática de NFS-e e disparo de lembretes de cobrança via WhatsApp.',
+          'Desenvolvido com Spec-Driven Development e arquitetura DDD em camadas.',
+          'Backend em Node.js/TypeScript com Fastify, Prisma sobre PostgreSQL, filas com BullMQ e Redis.',
+          'Frontend em Next.js para gestão do ciclo de cobrança.'
+        ]
+      },
+      en: {
+        name: 'CobraCerta',
+        subtitle: 'Recurring Billing & Invoicing',
+        intro: 'Multi-tenant recurring billing and invoicing SaaS that automates the entire financial cycle: invoice issuance, payment gateway integration, e-invoice (NFS-e) generation, and WhatsApp reminders.',
+        points: [
+          'Integrates with the Asaas and Santander payment gateways for invoice issuance and reconciliation.',
+          'Automatic e-invoice (NFS-e) generation and WhatsApp payment reminders.',
+          'Built with Spec-Driven Development and a layered DDD architecture.',
+          'Backend in Node.js/TypeScript with Fastify, Prisma on PostgreSQL, queues with BullMQ and Redis.',
+          'Frontend in Next.js for managing the billing cycle.'
+        ]
+      }
+    },
+    convoca: {
+      image: null,
+      repo: 'https://github.com/leirisson/rh_inteligente',
+      tags: ['Node.js','TypeScript','Fastify','Prisma','PostgreSQL','LangGraph','Evolution API'],
+      pt: {
+        name: 'Convoca',
+        subtitle: 'Recrutamento com Agente de IA',
+        intro: 'Plataforma de recrutamento que inverte a busca de emprego: um agente de IA contata candidatos por WhatsApp quando surgem vagas compatíveis, conduz a triagem em conversa natural e encaminha os aprovados ao recrutador.',
+        points: [
+          'Orquestração do fluxo de triagem via LangGraph, integrada à Evolution API para conversas no WhatsApp.',
+          'Contato proativo com candidatos assim que surgem vagas compatíveis com o perfil.',
+          'Triagem conduzida em linguagem natural, sem formulários tradicionais.',
+          'Encaminhamento automático dos candidatos aprovados ao recrutador responsável.',
+          'Backend em Node.js/TypeScript com Fastify e Prisma sobre PostgreSQL.'
+        ]
+      },
+      en: {
+        name: 'Convoca',
+        subtitle: 'AI-Agent Recruitment',
+        intro: 'Recruitment platform that flips the job search around: an AI agent contacts candidates on WhatsApp when a matching role opens up, screens them in natural conversation, and forwards approved candidates to the recruiter.',
+        points: [
+          'Screening flow orchestrated with LangGraph, integrated with the Evolution API for WhatsApp conversations.',
+          'Proactive outreach to candidates as soon as a matching role opens up.',
+          'Screening conducted in natural language, with no traditional forms.',
+          'Automatic handoff of approved candidates to the responsible recruiter.',
+          'Backend in Node.js/TypeScript with Fastify and Prisma on PostgreSQL.'
+        ]
+      }
+    },
     barberxp: {
       image: 'projetos/barberxp-web.jpg',
+      repo: null,
       tags: ['Fastify','TypeScript','Next.js 16','React 19','Prisma','PostgreSQL','Zustand','Docker','Vitest'],
       pt: {
         name: 'BarberXP',
@@ -1044,6 +1151,7 @@ tlItems.forEach(el=> tlObserver.observe(el));
     },
     sgi: {
       image: 'projetos/sgi-web.jpg',
+      repo: 'https://github.com/leirisson/sistema-de-documentacao',
       tags: ['Node.js','Fastify','Prisma','PostgreSQL','Next.js 16','React 19','Radix UI','Playwright'],
       pt: {
         name: 'SGI',
@@ -1070,8 +1178,67 @@ tlItems.forEach(el=> tlObserver.observe(el));
         ]
       }
     },
+    kabru: {
+      image: null,
+      repo: 'https://github.com/leirisson/kabru-sistema',
+      tags: ['Next.js','TypeScript','Prisma','PostgreSQL','OpenAI','pdf-parse','Docker'],
+      pt: {
+        name: 'Kabru',
+        subtitle: 'Gestão de Pedidos com IA',
+        intro: 'Sistema interno de gestão de pedidos que usa IA para extrair dados diretamente de PDFs, eliminando a digitação manual.',
+        points: [
+          'Extração automática de dados de pedidos a partir de PDFs usando IA (OpenAI + pdf-parse).',
+          'Acompanhamento de cada pedido com controle de prazos (SLA).',
+          'Módulo financeiro integrado ao fluxo de pedidos.',
+          'Controle de acesso RBAC granular por perfil de usuário.',
+          'Stack em Next.js/TypeScript, Prisma sobre PostgreSQL, containerizado com Docker.'
+        ]
+      },
+      en: {
+        name: 'Kabru',
+        subtitle: 'AI-Powered Order Management',
+        intro: 'Internal order-management system that uses AI to extract data directly from PDFs, eliminating manual data entry.',
+        points: [
+          'Automatic extraction of order data from PDFs using AI (OpenAI + pdf-parse).',
+          'Tracks every order with SLA-based deadline control.',
+          'Financial module integrated into the order flow.',
+          'Granular RBAC access control by user role.',
+          'Stack in Next.js/TypeScript, Prisma on PostgreSQL, containerized with Docker.'
+        ]
+      }
+    },
+    grafy: {
+      image: null,
+      repo: 'https://github.com/leirisson/Gr-fy',
+      tags: ['Node.js','TypeScript','Fastify','Prisma','PostgreSQL','LangGraph','Anthropic API'],
+      pt: {
+        name: 'Gráfy',
+        subtitle: 'Orçamentos Automatizados para Gráficas',
+        intro: 'SaaS multi-tenant para gráficas que automatiza orçamentos e briefings de ponta a ponta. Um agente de IA conversa com o cliente, calcula preços em tempo real e gera automaticamente o orçamento e o brief técnico.',
+        points: [
+          'Agente de IA conversa com o cliente, calcula preços em tempo real e gera o orçamento em PDF e Excel.',
+          'Geração automática do brief técnico em XML para o CorelDraw.',
+          'Arquitetura hexagonal com máquina de estados para o fluxo de pedidos.',
+          'Orquestração do agente via LangGraph, integrado à Anthropic API.',
+          'Backend em Node.js/TypeScript com Fastify, Prisma sobre PostgreSQL.'
+        ]
+      },
+      en: {
+        name: 'Gráfy',
+        subtitle: 'Automated Quoting for Print Shops',
+        intro: 'Multi-tenant SaaS for print shops that automates end-to-end quoting and briefings. An AI agent talks to the client, calculates prices in real time, and automatically generates the quote and technical brief.',
+        points: [
+          'AI agent talks to the client, calculates prices in real time, and generates the quote as PDF and Excel.',
+          'Automatic generation of the technical brief in XML for CorelDraw.',
+          'Hexagonal architecture with a state machine for the order flow.',
+          'Agent orchestration via LangGraph, integrated with the Anthropic API.',
+          'Backend in Node.js/TypeScript with Fastify, Prisma on PostgreSQL.'
+        ]
+      }
+    },
     voxmaster: {
       image: 'projetos/voxmaster-web.jpg',
+      repo: null,
       tags: ['Node.js','Fastify','LangGraph','OpenAI','PostgreSQL','Next.js 15','Tailwind CSS','Vitest'],
       pt: {
         name: 'VoxMaster',
@@ -1108,6 +1275,8 @@ tlItems.forEach(el=> tlObserver.observe(el));
   const modalIntro = document.getElementById('modal-intro');
   const modalPoints = document.getElementById('modal-points');
   const modalTags = document.getElementById('modal-tags');
+  const modalMedia = document.querySelector('.modal-media');
+  const modalRepo = document.getElementById('modal-repo');
   if(!overlay) return;
 
   let lastFocused = null;
@@ -1120,13 +1289,23 @@ tlItems.forEach(el=> tlObserver.observe(el));
     activeKey = key;
     lastFocused = trigger;
     const t = p[currentLang] || p.pt;
-    modalImg.src = p.image;
-    modalImg.alt = t.name + ' — ' + t.subtitle;
+    modalMedia.classList.toggle('modal-media--placeholder', !p.image);
+    modalImg.hidden = !p.image;
+    if(p.image){
+      modalImg.src = p.image;
+      modalImg.alt = t.name + ' — ' + t.subtitle;
+    }
     modalTitle.textContent = t.name;
     modalSubtitle.textContent = t.subtitle;
     modalIntro.textContent = t.intro;
     modalPoints.innerHTML = t.points.map(pt => `<li>${pt}</li>`).join('');
     modalTags.innerHTML = p.tags.map(tag => `<span>${tag}</span>`).join('');
+    if(p.repo){
+      modalRepo.href = p.repo;
+      modalRepo.hidden = false;
+    } else {
+      modalRepo.hidden = true;
+    }
     overlay.hidden = false;
     document.body.style.overflow = 'hidden';
     requestAnimationFrame(()=> overlay.classList.add('is-open'));
